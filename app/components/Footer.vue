@@ -81,7 +81,7 @@ const policyLinks = [
       </div>
 
       <!-- Bottom Bar -->
-      <div class="border-t border-white/10 pt-6 flex flex-col items-center gap-4">
+      <div class="border-t border-white/10 pt-6 flex items-center justify-between gap-4">
         <!-- Logo & Copyright -->
         <div class="flex items-center gap-2">
           <span class="text-lg font-bold tracking-tight">
