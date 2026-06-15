@@ -84,6 +84,9 @@ export default defineNuxtConfig({
         },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary' },
+        { name: 'baidu-site-verification', content: 'codeva-8g1rCh8OA3' },
+        { name: 'msvalidate.01', content: 'F526DF23CF0FE656FBEF15F8E062C32E' },
+        { name: 'google-site-verification', content: 'bwPmpBHtfbCYP_cb9yaff7DZOkAu9z4r8gm8lXL4P3Q' },
       ],
       link: [{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
       htmlAttrs: {

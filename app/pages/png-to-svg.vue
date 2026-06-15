@@ -17,6 +17,7 @@ const {
   imageHeight,
   numberOfColors,
   detailLevel,
+  colorMode,
   isConverting,
   svgOutput,
   outputBlob,
@@ -31,7 +32,6 @@ const {
 const inputRef = ref<HTMLInputElement | null>(null)
 const isDragActive = ref(false)
 
-const colorMode = ref<'color' | 'grayscale' | 'bw'>('color')
 const colorOptions = [16, 32, 64]
 
 const faqItems = computed(() => {

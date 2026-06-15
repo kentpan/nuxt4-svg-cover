@@ -1,4 +1,12 @@
 <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="180" height="180" rx="90" fill="rgba(79, 110, 242, 1)"/>
-  <text x="90" y="97" fill="#ffffff" font-size="64" font-family="Verdana, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="middle">SVG</text>
+  <defs>
+    <linearGradient id="g" x1="20" y1="20" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4f6ef2"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="url(#g)"/>
+  <polyline points="76,54 36,90 76,126" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="98" y1="90" x2="148" y2="90" stroke="white" stroke-width="14" stroke-linecap="round"/>
+  <polyline points="130,70 148,90 130,110" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

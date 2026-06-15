@@ -5,6 +5,7 @@ export function useImageToSvg() {
   const imageHeight = ref(0)
   const numberOfColors = ref(16)
   const detailLevel = ref<'high' | 'medium' | 'low'>('medium')
+  const colorMode = ref<'color' | 'grayscale' | 'bw'>('color')
   const isConverting = ref(false)
   const svgOutput = ref('')
   const outputBlob = ref<Blob | null>(null)
@@ -48,6 +49,9 @@ export function useImageToSvg() {
       ctx.drawImage(img, 0, 0)
       const imgData = ctx.getImageData(0, 0, img.width, img.height)
 
+      // Apply color mode preprocessing
+      applyColorMode(imgData, colorMode.value)
+
       // Build imagetracerjs options based on user settings
       const options = buildTracerOptions()
 
@@ -73,6 +77,30 @@ export function useImageToSvg() {
       error.value = (e as Error).message || 'Conversion failed'
     } finally {
       isConverting.value = false
+    }
+  }
+
+  /**
+   * Apply color mode to ImageData in-place.
+   * - grayscale: convert to luminance using perceptual weights
+   * - bw: convert to pure black & white (threshold 128)
+   * - color: no change
+   */
+  function applyColorMode(imgData: ImageData, mode: 'color' | 'grayscale' | 'bw') {
+    if (mode === 'color') return
+    const d = imgData.data
+    for (let i = 0; i < d.length; i += 4) {
+      const gray = Math.round(0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2])
+      if (mode === 'bw') {
+        const val = gray >= 128 ? 255 : 0
+        d[i] = val
+        d[i + 1] = val
+        d[i + 2] = val
+      } else {
+        d[i] = gray
+        d[i + 1] = gray
+        d[i + 2] = gray
+      }
     }
   }
 
@@ -167,6 +195,7 @@ export function useImageToSvg() {
     imageHeight.value = 0
     numberOfColors.value = 16
     detailLevel.value = 'medium'
+    colorMode.value = 'color'
     isConverting.value = false
     svgOutput.value = ''
     outputBlob.value = null
@@ -200,6 +229,7 @@ export function useImageToSvg() {
     imageHeight,
     numberOfColors,
     detailLevel,
+    colorMode,
     isConverting,
     svgOutput,
     outputBlob,

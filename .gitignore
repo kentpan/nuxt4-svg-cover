@@ -4,4 +4,10 @@ node_modules
 .data
 *.log
 .DS_Store
-*lock
+.env
+.env*
+dist
+.git
+.idea
+.vscode
+*lock.json

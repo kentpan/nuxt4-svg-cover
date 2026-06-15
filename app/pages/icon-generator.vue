@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Zap, UserX, ShieldCheck, ArrowDown, Download, RotateCcw, Type, Palette, Maximize2, Move } from 'lucide-vue-next'
+import { Zap, UserX, ShieldCheck, ArrowDown, Download, RotateCcw, Type, Palette, Maximize2, Move, Blend } from 'lucide-vue-next'
 
 const { t, tm } = useI18n()
 
@@ -37,6 +37,13 @@ const config = ref({
   bgRadius: 40,
   fontSize: 80,
   fontFamily: 'Arial, sans-serif',
+  // Text gradient
+  textGradientEnabled: false,
+  textGradientStart: '#ffffff',
+  textGradientEnd: '#a5b4fc',
+  textGradientOpacityStart: 1,
+  textGradientOpacityEnd: 0.6,
+  textGradientDirection: 'to right' as 'to right' | 'to bottom' | 'to bottom right' | 'to bottom left',
 })
 
 const radiusOptions = [
@@ -53,6 +60,13 @@ const fontOptions = [
   { label: 'Verdana', value: 'Verdana, sans-serif' },
 ]
 
+const gradientDirOptions = [
+  { label: '→', value: 'to right' as const },
+  { label: '↓', value: 'to bottom' as const },
+  { label: '↘', value: 'to bottom right' as const },
+  { label: '↙', value: 'to bottom left' as const },
+]
+
 // Text position
 const textPos = ref({ x: 90, y: 90 })
 const isDragging = ref(false)
@@ -66,6 +80,38 @@ const bgColorComputed = computed(() => {
   const g = parseInt(hex.slice(3, 5), 16)
   const b = parseInt(hex.slice(5, 7), 16)
   return `rgba(${r}, ${g}, ${b}, ${config.value.bgOpacity})`
+})
+
+// Helper: hex to rgba
+function hexToRgba(hex: string, alpha: number): string {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
+// Build SVG gradient definition string
+const gradientDef = computed(() => {
+  if (!config.value.textGradientEnabled) return ''
+  const c = config.value
+  const dirMap: Record<string, { x1: string; y1: string; x2: string; y2: string }> = {
+    'to right':         { x1: '0%', y1: '50%', x2: '100%', y2: '50%' },
+    'to bottom':        { x1: '50%', y1: '0%', x2: '50%', y2: '100%' },
+    'to bottom right':  { x1: '0%', y1: '0%', x2: '100%', y2: '100%' },
+    'to bottom left':   { x1: '100%', y1: '0%', x2: '0%', y2: '100%' },
+  }
+  const dir = dirMap[c.textGradientDirection] || dirMap['to right']
+  return `  <defs>
+    <linearGradient id="textGrad" x1="${dir.x1}" y1="${dir.y1}" x2="${dir.x2}" y2="${dir.y2}">
+      <stop offset="0%" stop-color="${hexToRgba(c.textGradientStart, c.textGradientOpacityStart)}" />
+      <stop offset="100%" stop-color="${hexToRgba(c.textGradientEnd, c.textGradientOpacityEnd)}" />
+    </linearGradient>
+  </defs>`
+})
+
+// Text fill: gradient or solid
+const textFill = computed(() => {
+  return config.value.textGradientEnabled ? 'url(#textGrad)' : config.value.textColor
 })
 
 // Drag handlers
@@ -105,8 +151,9 @@ function stopDrag() {
 // Generate SVG string
 function generateSvgString() {
   return `<svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+${gradientDef.value}
   <rect width="180" height="180" rx="${config.value.bgRadius}" fill="${bgColorComputed.value}"/>
-  <text x="${Math.round(textPos.value.x)}" y="${Math.round(textPos.value.y)}" fill="${config.value.textColor}" font-size="${config.value.fontSize}" font-family="${config.value.fontFamily}" font-weight="bold" text-anchor="middle" dominant-baseline="middle">${config.value.text}</text>
+  <text x="${Math.round(textPos.value.x)}" y="${Math.round(textPos.value.y)}" fill="${textFill.value}" font-size="${config.value.fontSize}" font-family="${config.value.fontFamily}" font-weight="bold" text-anchor="middle" dominant-baseline="middle">${config.value.text}</text>
 </svg>`
 }
 
@@ -134,6 +181,12 @@ function resetConfig() {
     bgRadius: 40,
     fontSize: 80,
     fontFamily: 'Arial, sans-serif',
+    textGradientEnabled: false,
+    textGradientStart: '#ffffff',
+    textGradientEnd: '#a5b4fc',
+    textGradientOpacityStart: 1,
+    textGradientOpacityEnd: 0.6,
+    textGradientDirection: 'to right',
   }
   textPos.value = { x: 90, y: 90 }
 }
@@ -231,8 +284,8 @@ function scrollToGenerator() {
               </div>
             </div>
 
-            <!-- Text Color -->
-            <div>
+            <!-- Text Color (solid mode) -->
+            <div v-if="!config.textGradientEnabled">
               <label class="block text-sm font-medium text-foreground mb-1.5">{{ t('iconGen.textColorLabel') }}</label>
               <div class="relative inline-block">
                 <input
@@ -246,6 +299,111 @@ function scrollToGenerator() {
                 >
                   {{ config.textColor }}
                 </div>
+              </div>
+            </div>
+
+            <!-- Text Gradient -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="flex items-center gap-1.5 text-sm font-medium text-foreground">
+                  <Blend class="w-4 h-4 text-muted-foreground" />
+                  {{ t('iconGen.textGradientLabel') }}
+                </label>
+                <button
+                  class="relative inline-flex h-5 w-9 items-center rounded-full transition-colors"
+                  :class="config.textGradientEnabled ? 'bg-primary' : 'bg-muted'"
+                  @click="config.textGradientEnabled = !config.textGradientEnabled"
+                >
+                  <span
+                    class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-sm"
+                    :class="config.textGradientEnabled ? 'translate-x-4' : 'translate-x-0.5'"
+                  />
+                </button>
+              </div>
+
+              <!-- Gradient settings (shown when enabled) -->
+              <div v-if="config.textGradientEnabled" class="space-y-3 pl-1 border-l-2 border-primary/30 ml-0.5">
+                <!-- Start color + opacity -->
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs text-muted-foreground">{{ t('iconGen.gradientStart') }}</span>
+                    <span class="text-xs font-mono text-muted-foreground">{{ (config.textGradientOpacityStart * 100).toFixed(0) }}%</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="relative">
+                      <input
+                        type="color"
+                        v-model="config.textGradientStart"
+                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      />
+                      <div
+                        class="w-8 h-8 rounded border border-border cursor-pointer"
+                        :style="{ backgroundColor: config.textGradientStart, opacity: config.textGradientOpacityStart }"
+                      />
+                    </div>
+                    <input
+                      type="range"
+                      v-model.number="config.textGradientOpacityStart"
+                      min="0" max="1" step="0.05"
+                      class="flex-1 h-2 accent-primary"
+                    />
+                  </div>
+                </div>
+
+                <!-- End color + opacity -->
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs text-muted-foreground">{{ t('iconGen.gradientEnd') }}</span>
+                    <span class="text-xs font-mono text-muted-foreground">{{ (config.textGradientOpacityEnd * 100).toFixed(0) }}%</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="relative">
+                      <input
+                        type="color"
+                        v-model="config.textGradientEnd"
+                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      />
+                      <div
+                        class="w-8 h-8 rounded border border-border cursor-pointer"
+                        :style="{ backgroundColor: config.textGradientEnd, opacity: config.textGradientOpacityEnd }"
+                      />
+                    </div>
+                    <input
+                      type="range"
+                      v-model.number="config.textGradientOpacityEnd"
+                      min="0" max="1" step="0.05"
+                      class="flex-1 h-2 accent-primary"
+                    />
+                  </div>
+                </div>
+
+                <!-- Gradient direction -->
+                <div>
+                  <span class="text-xs text-muted-foreground block mb-1.5">{{ t('iconGen.gradientDirection') }}</span>
+                  <div class="flex gap-1.5">
+                    <button
+                      v-for="opt in gradientDirOptions"
+                      :key="opt.value"
+                      @click="config.textGradientDirection = opt.value"
+                      :class="[
+                        'flex-1 py-1.5 text-sm rounded-md border transition-all duration-150 font-medium text-center',
+                        config.textGradientDirection === opt.value
+                          ? 'bg-primary text-primary-foreground border-primary shadow-sm'
+                          : 'bg-background text-muted-foreground border-border hover:bg-accent hover:text-foreground'
+                      ]"
+                    >
+                      {{ opt.label }}
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Gradient preview bar -->
+                <div
+                  class="h-4 rounded-full border border-border overflow-hidden"
+                  :style="{
+                    background: `linear-gradient(${config.textGradientDirection}, ${hexToRgba(config.textGradientStart, config.textGradientOpacityStart)}, ${hexToRgba(config.textGradientEnd, config.textGradientOpacityEnd)})`
+                  }"
+                />
               </div>
             </div>
 
@@ -354,10 +512,12 @@ function scrollToGenerator() {
                     :rx="config.bgRadius"
                     :fill="bgColorComputed"
                   />
+                  <!-- Gradient def (v-html to render SVG defs) -->
+                  <g v-if="config.textGradientEnabled" v-html="'<defs><linearGradient id=\'textGrad\' x1=\'' + (config.textGradientDirection === 'to right' ? '0%' : config.textGradientDirection === 'to bottom' ? '50%' : config.textGradientDirection === 'to bottom right' ? '0%' : '100%') + '\' y1=\'' + (config.textGradientDirection === 'to right' ? '50%' : config.textGradientDirection === 'to bottom' ? '0%' : '0%') + '\' x2=\'' + (config.textGradientDirection === 'to right' ? '100%' : config.textGradientDirection === 'to bottom' ? '50%' : config.textGradientDirection === 'to bottom right' ? '100%' : '0%') + '\' y2=\'' + (config.textGradientDirection === 'to right' ? '50%' : config.textGradientDirection === 'to bottom' ? '100%' : '100%') + '\'><stop offset=\'0%\' stop-color=\'' + hexToRgba(config.textGradientStart, config.textGradientOpacityStart) + '\'/><stop offset=\'100%\' stop-color=\'' + hexToRgba(config.textGradientEnd, config.textGradientOpacityEnd) + '\'/></linearGradient></defs>'" />
                   <text
                     :x="textPos.x"
                     :y="textPos.y"
-                    :fill="config.textColor"
+                    :fill="textFill"
                     :font-size="config.fontSize"
                     :font-family="config.fontFamily"
                     font-weight="bold"
