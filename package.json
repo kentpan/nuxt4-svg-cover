@@ -1,0 +1,27 @@
+{
+  "name": "svg-cover",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "NODE_ENV=production nuxt build",
+    "dev": "nuxt dev --port 3001",
+    "generate": "NODE_ENV=production nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^10.4.0",
+    "imagetracerjs": "^1.2.6",
+    "jspdf": "^2.5.2",
+    "lucide-vue-next": "^0.474.0",
+    "nuxt": "4.4.6",
+    "vue": "^3.5.34",
+    "vue-router": "^5.0.7"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "tailwindcss": "3.4.19",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "typescript": "^5.7.0"
+  }
+}
