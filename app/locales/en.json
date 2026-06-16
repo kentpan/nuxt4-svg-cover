@@ -148,11 +148,26 @@
       "dxfDesc": "Convert SVG to DXF format for use in CAD software and engineering workflows."
     },
     "useCases": {
-      "logoExport": { "title": "Logo Export", "desc": "Convert your SVG logos to raster formats at any size for branding and marketing materials." },
-      "faviconCreation": { "title": "Favicon Creation", "desc": "Generate ICO favicons from SVG icons for browser tabs, bookmarks, and desktop shortcuts." },
-      "webOptimization": { "title": "Web Optimization", "desc": "Export SVG graphics to WebP or PNG for faster page loads and better web performance." },
-      "designDelivery": { "title": "Design Delivery", "desc": "Convert design assets from SVG to client-ready formats like PNG, JPG, or PDF." },
-      "appAssets": { "title": "App Assets", "desc": "Prepare SVG illustrations and icons for use in mobile and desktop applications." }
+      "logoExport": {
+        "title": "Logo Export",
+        "desc": "Convert your SVG logos to raster formats at any size for branding and marketing materials."
+      },
+      "faviconCreation": {
+        "title": "Favicon Creation",
+        "desc": "Generate ICO favicons from SVG icons for browser tabs, bookmarks, and desktop shortcuts."
+      },
+      "webOptimization": {
+        "title": "Web Optimization",
+        "desc": "Export SVG graphics to WebP or PNG for faster page loads and better web performance."
+      },
+      "designDelivery": {
+        "title": "Design Delivery",
+        "desc": "Convert design assets from SVG to client-ready formats like PNG, JPG, or PDF."
+      },
+      "appAssets": {
+        "title": "App Assets",
+        "desc": "Prepare SVG illustrations and icons for use in mobile and desktop applications."
+      }
     },
     "benefits": [
       "Simple upload and fast export",
@@ -163,31 +178,94 @@
       "Works well for logos, icons, illustrations, and UI assets"
     ],
     "toolList": [
-      { "title": "SVG to PNG", "desc": "Convert SVG to transparent PNG images with custom sizes." },
-      { "title": "SVG to JPG", "desc": "Export SVG as high-quality JPEG files." },
-      { "title": "SVG to WebP", "desc": "Optimize SVG for the web with WebP output." },
-      { "title": "SVG to PDF", "desc": "Convert SVG to vector PDF documents." },
-      { "title": "SVG to ICO", "desc": "Create ICO favicons from SVG icons." },
-      { "title": "SVG to DXF", "desc": "Convert SVG to DXF for CAD workflows." },
-      { "title": "Image to SVG", "desc": "Convert raster images (PNG, JPG, WebP, GIF, ICO) to SVG." },
-      { "title": "DXF to SVG", "desc": "Convert DXF CAD files to SVG vector graphics." }
+      {
+        "title": "SVG to PNG",
+        "desc": "Convert SVG to transparent PNG images with custom sizes."
+      },
+      {
+        "title": "SVG to JPG",
+        "desc": "Export SVG as high-quality JPEG files."
+      },
+      {
+        "title": "SVG to WebP",
+        "desc": "Optimize SVG for the web with WebP output."
+      },
+      {
+        "title": "SVG to PDF",
+        "desc": "Convert SVG to vector PDF documents."
+      },
+      {
+        "title": "SVG to ICO",
+        "desc": "Create ICO favicons from SVG icons."
+      },
+      {
+        "title": "SVG to DXF",
+        "desc": "Convert SVG to DXF for CAD workflows."
+      },
+      {
+        "title": "Image to SVG",
+        "desc": "Convert raster images (PNG, JPG, WebP, GIF, ICO) to SVG."
+      },
+      {
+        "title": "DXF to SVG",
+        "desc": "Convert DXF CAD files to SVG vector graphics."
+      }
     ],
     "steps": [
-      { "title": "Upload your SVG file", "desc": "Drag and drop your SVG or click the upload button to select a file from your device." },
-      { "title": "Choose output settings", "desc": "Select PNG, JPG, WebP, PDF, ICO, or DXF and adjust size or background if needed." },
-      { "title": "Convert and download", "desc": "Click convert, preview the result, and download your exported file instantly." }
+      {
+        "title": "Upload your SVG file",
+        "desc": "Drag and drop your SVG or click the upload button to select a file from your device."
+      },
+      {
+        "title": "Choose output settings",
+        "desc": "Select PNG, JPG, WebP, PDF, ICO, or DXF and adjust size or background if needed."
+      },
+      {
+        "title": "Convert and download",
+        "desc": "Click convert, preview the result, and download your exported file instantly."
+      }
     ],
     "faq": [
-      { "q": "What is an SVG file?", "a": "SVG is a scalable vector graphic format that stays sharp at any size, making it ideal for logos, icons, and illustrations." },
-      { "q": "Can I convert SVG to PNG online?", "a": "Yes. Upload your SVG file, choose PNG as the output format, and download the exported image after conversion." },
-      { "q": "Can I make a transparent PNG from SVG?", "a": "Yes. If your SVG supports transparency, you can export it as a transparent PNG directly from the tool." },
-      { "q": "What formats does this SVG Converter support?", "a": "The tool supports exporting SVG to PNG, JPG, WebP, PDF, ICO, and DXF. It also supports converting PNG, JPG, WebP, GIF, ICO images and DXF files to SVG." },
-      { "q": "Is this SVG Converter free?", "a": "Yes. The tool is free to use and does not require account registration." },
-      { "q": "Can I use it for favicon creation?", "a": "Yes. You can export SVG icons to ICO for browser tabs, shortcuts, and website favicon use." },
-      { "q": "Will my SVG lose quality after export?", "a": "SVG itself is vector-based. When exporting to raster formats such as PNG or JPG, output quality depends on the size and settings you choose." },
-      { "q": "Does this tool work on mobile?", "a": "It can support mobile browsers, but desktop usage is recommended for a more comfortable file preview and parameter setting experience." },
-      { "q": "Can I change the output size before downloading?", "a": "Yes. You can adjust width, height, or scale settings before exporting the final file." },
-      { "q": "What is the best format to export SVG for websites?", "a": "It depends on the use case. PNG is good for transparency, WebP is better for smaller web images, and ICO is best for favicons." }
+      {
+        "q": "What is an SVG file?",
+        "a": "SVG is a scalable vector graphic format that stays sharp at any size, making it ideal for logos, icons, and illustrations."
+      },
+      {
+        "q": "Can I convert SVG to PNG online?",
+        "a": "Yes. Upload your SVG file, choose PNG as the output format, and download the exported image after conversion."
+      },
+      {
+        "q": "Can I make a transparent PNG from SVG?",
+        "a": "Yes. If your SVG supports transparency, you can export it as a transparent PNG directly from the tool."
+      },
+      {
+        "q": "What formats does this SVG Converter support?",
+        "a": "The tool supports exporting SVG to PNG, JPG, WebP, PDF, ICO, and DXF. It also supports converting PNG, JPG, WebP, GIF, ICO images and DXF files to SVG."
+      },
+      {
+        "q": "Is this SVG Converter free?",
+        "a": "Yes. The tool is free to use and does not require account registration."
+      },
+      {
+        "q": "Can I use it for favicon creation?",
+        "a": "Yes. You can export SVG icons to ICO for browser tabs, shortcuts, and website favicon use."
+      },
+      {
+        "q": "Will my SVG lose quality after export?",
+        "a": "SVG itself is vector-based. When exporting to raster formats such as PNG or JPG, output quality depends on the size and settings you choose."
+      },
+      {
+        "q": "Does this tool work on mobile?",
+        "a": "It can support mobile browsers, but desktop usage is recommended for a more comfortable file preview and parameter setting experience."
+      },
+      {
+        "q": "Can I change the output size before downloading?",
+        "a": "Yes. You can adjust width, height, or scale settings before exporting the final file."
+      },
+      {
+        "q": "What is the best format to export SVG for websites?",
+        "a": "It depends on the use case. PNG is good for transparency, WebP is better for smaller web images, and ICO is best for favicons."
+      }
     ]
   },
   "tools": {
@@ -200,28 +278,73 @@
       "seo1Content": "SVG (Scalable Vector Graphics) files are ideal for web design and illustration due to their infinite scalability. However, some applications and platforms require raster image formats like PNG. Converting SVG to PNG allows you to use your vector graphics in contexts that don't support SVG, such as social media uploads, email signatures, legacy software, and print workflows. PNG also offers lossless compression and full transparency support, making it a reliable format for preserving the visual quality of your SVG artwork.",
       "seo2Title": "When to Use PNG Format",
       "seo2Items": [
-        { "label": "Website graphics", "desc": "When you need broad browser compatibility or transparent backgrounds" },
-        { "label": "App icons", "desc": "Most mobile platforms accept PNG for icon assets" },
-        { "label": "Social media", "desc": "Platforms like Instagram, Facebook, and Twitter require raster uploads" },
-        { "label": "Print-ready assets", "desc": "High-resolution PNG exports at 300+ DPI work well for printing" },
-        { "label": "Screenshots and documentation", "desc": "PNG preserves crisp edges and text clarity" }
+        {
+          "label": "Website graphics",
+          "desc": "When you need broad browser compatibility or transparent backgrounds"
+        },
+        {
+          "label": "App icons",
+          "desc": "Most mobile platforms accept PNG for icon assets"
+        },
+        {
+          "label": "Social media",
+          "desc": "Platforms like Instagram, Facebook, and Twitter require raster uploads"
+        },
+        {
+          "label": "Print-ready assets",
+          "desc": "High-resolution PNG exports at 300+ DPI work well for printing"
+        },
+        {
+          "label": "Screenshots and documentation",
+          "desc": "PNG preserves crisp edges and text clarity"
+        }
       ],
       "seo3Title": "SVG vs PNG: Key Differences",
       "seo3Content": "SVG is a vector format defined by XML markup, meaning it can scale to any size without losing quality. It's best suited for logos, icons, and illustrations with clean shapes. PNG is a raster (pixel-based) format that stores image data at a fixed resolution. While PNG supports lossless compression and transparency, it does not scale without pixelation. Converting SVG to PNG \"flattens\" the vector data into a grid of pixels at your chosen resolution.",
       "seo4Title": "Tips for the Best SVG to PNG Conversion",
       "seo4Items": [
-        { "desc": "Use {bold} for standard Retina/HiDPI displays to ensure sharp rendering", "bold": "2x scale" },
-        { "desc": "Use {bold} for print or extremely high-resolution screens", "bold": "3x or 4x scale" },
-        { "desc": "Select {bold} if your design will overlay other content", "bold": "Transparent background" },
-        { "desc": "Select {bold} for standalone use or upload to platforms that don't support transparency", "bold": "White background" }
+        {
+          "desc": "Use {bold} for standard Retina/HiDPI displays to ensure sharp rendering",
+          "bold": "2x scale"
+        },
+        {
+          "desc": "Use {bold} for print or extremely high-resolution screens",
+          "bold": "3x or 4x scale"
+        },
+        {
+          "desc": "Select {bold} if your design will overlay other content",
+          "bold": "Transparent background"
+        },
+        {
+          "desc": "Select {bold} for standalone use or upload to platforms that don't support transparency",
+          "bold": "White background"
+        }
       ],
       "faq": [
-        { "q": "How do I convert SVG to PNG?", "a": "Upload your SVG file, choose PNG as the output format, set your desired size and background, then click convert and download." },
-        { "q": "Does SVG to PNG conversion support transparency?", "a": "Yes. If your SVG has transparent areas, the exported PNG will preserve transparency when you select the \"Transparent\" background option." },
-        { "q": "What resolution should I use for SVG to PNG?", "a": "For standard web use, 1x or 2x scale is recommended. For high-DPI displays, use 2x or 3x. For print, use 4x or higher." },
-        { "q": "Will my SVG lose quality when converted to PNG?", "a": "PNG is a lossless format, so there is no compression artifact. However, since PNG is raster-based, the quality depends on the output resolution you choose." },
-        { "q": "Can I convert SVG to PNG for free?", "a": "Yes. This tool is completely free with no signup required." },
-        { "q": "Is this SVG to PNG converter safe?", "a": "Yes. All processing happens in your browser. Your files never leave your device." }
+        {
+          "q": "How do I convert SVG to PNG?",
+          "a": "Upload your SVG file, choose PNG as the output format, set your desired size and background, then click convert and download."
+        },
+        {
+          "q": "Does SVG to PNG conversion support transparency?",
+          "a": "Yes. If your SVG has transparent areas, the exported PNG will preserve transparency when you select the \"Transparent\" background option."
+        },
+        {
+          "q": "What resolution should I use for SVG to PNG?",
+          "a": "For standard web use, 1x or 2x scale is recommended. For high-DPI displays, use 2x or 3x. For print, use 4x or higher."
+        },
+        {
+          "q": "Will my SVG lose quality when converted to PNG?",
+          "a": "PNG is a lossless format, so there is no compression artifact. However, since PNG is raster-based, the quality depends on the output resolution you choose."
+        },
+        {
+          "q": "Can I convert SVG to PNG for free?",
+          "a": "Yes. This tool is completely free with no signup required."
+        },
+        {
+          "q": "Is this SVG to PNG converter safe?",
+          "a": "Yes. All processing happens in your browser. Your files never leave your device."
+        }
       ]
     },
     "jpg": {
@@ -233,26 +356,71 @@
       "seo1Content": "JPG (or JPEG) is one of the most widely supported image formats in the world. Converting SVG to JPG is useful when you need a compact, universally compatible raster image. JPEG's lossy compression significantly reduces file size compared to PNG, making it ideal for photographs, email attachments, and web content where transparency is not needed. If your SVG contains photographic elements or gradients, JPG can often represent them with a much smaller file footprint.",
       "seo2Title": "When to Use JPG/JPEG Format",
       "seo2Items": [
-        { "label": "Email attachments", "desc": "Small file sizes make JPG ideal for embedding in emails" },
-        { "label": "Social media uploads", "desc": "Most platforms compress to JPEG anyway, so starting with JPG avoids double-compression" },
-        { "label": "Website content images", "desc": "Blog posts, product images, and banners benefit from JPEG's small file sizes" },
-        { "label": "Document embedding", "desc": "Word docs, PowerPoint, and PDFs handle JPG well" },
-        { "label": "Legacy system uploads", "desc": "Older applications may not support SVG but accept JPG" }
+        {
+          "label": "Email attachments",
+          "desc": "Small file sizes make JPG ideal for embedding in emails"
+        },
+        {
+          "label": "Social media uploads",
+          "desc": "Most platforms compress to JPEG anyway, so starting with JPG avoids double-compression"
+        },
+        {
+          "label": "Website content images",
+          "desc": "Blog posts, product images, and banners benefit from JPEG's small file sizes"
+        },
+        {
+          "label": "Document embedding",
+          "desc": "Word docs, PowerPoint, and PDFs handle JPG well"
+        },
+        {
+          "label": "Legacy system uploads",
+          "desc": "Older applications may not support SVG but accept JPG"
+        }
       ],
       "seo3Title": "Tips for SVG to JPG Conversion",
       "seo3Items": [
-        { "desc": "Set quality to {bold} for a good balance of quality and file size", "bold": "85–95%" },
-        { "desc": "Use {bold} for Retina displays to keep text and edges crisp", "bold": "2x scale" },
-        { "desc": "Remember that {bold} — a white background will be applied automatically", "bold": "JPG does not support transparency" },
-        { "desc": "For graphics with sharp text or clean edges, consider {bold} to avoid JPEG compression artifacts", "bold": "PNG instead" }
+        {
+          "desc": "Set quality to {bold} for a good balance of quality and file size",
+          "bold": "85–95%"
+        },
+        {
+          "desc": "Use {bold} for Retina displays to keep text and edges crisp",
+          "bold": "2x scale"
+        },
+        {
+          "desc": "Remember that {bold} — a white background will be applied automatically",
+          "bold": "JPG does not support transparency"
+        },
+        {
+          "desc": "For graphics with sharp text or clean edges, consider {bold} to avoid JPEG compression artifacts",
+          "bold": "PNG instead"
+        }
       ],
       "faq": [
-        { "q": "How do I convert SVG to JPG?", "a": "Upload your SVG file, adjust the output size and quality slider, then click convert and download your JPEG file. The entire process happens in your browser." },
-        { "q": "Does JPG support transparency?", "a": "No. The JPEG format does not support transparent backgrounds. When converting SVG to JPG, the background will be filled with white automatically. If you need transparency, use PNG or WebP instead." },
-        { "q": "What quality setting should I use for SVG to JPG?", "a": "A quality setting of 85–95% is recommended for most uses. Higher values produce sharper images with larger file sizes. For web use where file size matters, 75–85% is a good balance." },
-        { "q": "Why is my JPG file larger/smaller than my SVG?", "a": "SVG files are XML text files, while JPG is a compressed raster format. Simple SVGs may produce larger JPGs at high quality, while complex SVGs with many elements can result in smaller JPGs due to JPEG compression." },
-        { "q": "Can I convert SVG to JPG for free?", "a": "Yes. This tool is completely free with no signup required, no watermarks, and no file size limits." },
-        { "q": "Is this SVG to JPG converter safe?", "a": "Yes. All conversion happens locally in your browser. Your files are never uploaded to any server, ensuring complete privacy." }
+        {
+          "q": "How do I convert SVG to JPG?",
+          "a": "Upload your SVG file, adjust the output size and quality slider, then click convert and download your JPEG file. The entire process happens in your browser."
+        },
+        {
+          "q": "Does JPG support transparency?",
+          "a": "No. The JPEG format does not support transparent backgrounds. When converting SVG to JPG, the background will be filled with white automatically. If you need transparency, use PNG or WebP instead."
+        },
+        {
+          "q": "What quality setting should I use for SVG to JPG?",
+          "a": "A quality setting of 85–95% is recommended for most uses. Higher values produce sharper images with larger file sizes. For web use where file size matters, 75–85% is a good balance."
+        },
+        {
+          "q": "Why is my JPG file larger/smaller than my SVG?",
+          "a": "SVG files are XML text files, while JPG is a compressed raster format. Simple SVGs may produce larger JPGs at high quality, while complex SVGs with many elements can result in smaller JPGs due to JPEG compression."
+        },
+        {
+          "q": "Can I convert SVG to JPG for free?",
+          "a": "Yes. This tool is completely free with no signup required, no watermarks, and no file size limits."
+        },
+        {
+          "q": "Is this SVG to JPG converter safe?",
+          "a": "Yes. All conversion happens locally in your browser. Your files are never uploaded to any server, ensuring complete privacy."
+        }
       ]
     },
     "webp": {
@@ -265,25 +433,67 @@
       "seo2Title": "WebP vs PNG for Web",
       "seo2Intro": "WebP consistently outperforms PNG in file size while maintaining similar or better visual quality. Here's how they compare:",
       "seo2Items": [
-        { "label": "File size", "desc": "WebP is 25–35% smaller than PNG at equivalent quality" },
-        { "label": "Transparency", "desc": "Both formats support alpha channel transparency" },
-        { "label": "Animation", "desc": "WebP supports animation like GIF, while PNG does not" },
-        { "label": "Browser support", "desc": "WebP is supported by Chrome, Firefox, Safari, Edge, and all modern browsers" }
+        {
+          "label": "File size",
+          "desc": "WebP is 25–35% smaller than PNG at equivalent quality"
+        },
+        {
+          "label": "Transparency",
+          "desc": "Both formats support alpha channel transparency"
+        },
+        {
+          "label": "Animation",
+          "desc": "WebP supports animation like GIF, while PNG does not"
+        },
+        {
+          "label": "Browser support",
+          "desc": "WebP is supported by Chrome, Firefox, Safari, Edge, and all modern browsers"
+        }
       ],
       "seo3Title": "Tips for SVG to WebP Conversion",
       "seo3Items": [
-        { "desc": "Use {bold} for web optimization — you'll barely notice the difference from higher settings", "bold": "75–85% quality" },
-        { "desc": "Set {bold} for sharp rendering on Retina/HiDPI displays", "bold": "2x scale" },
-        { "desc": "Use {bold} to leverage WebP's alpha channel support", "bold": "transparent background" },
-        { "desc": "For photographic SVGs with gradients, WebP lossy compression at {bold} typically gives the best results", "bold": "80%+" }
+        {
+          "desc": "Use {bold} for web optimization — you'll barely notice the difference from higher settings",
+          "bold": "75–85% quality"
+        },
+        {
+          "desc": "Set {bold} for sharp rendering on Retina/HiDPI displays",
+          "bold": "2x scale"
+        },
+        {
+          "desc": "Use {bold} to leverage WebP's alpha channel support",
+          "bold": "transparent background"
+        },
+        {
+          "desc": "For photographic SVGs with gradients, WebP lossy compression at {bold} typically gives the best results",
+          "bold": "80%+"
+        }
       ],
       "faq": [
-        { "q": "How do I convert SVG to WebP?", "a": "Upload your SVG file, choose your desired output size, quality, and background, then click convert. Your WebP file will be ready for download instantly." },
-        { "q": "Does WebP support transparency?", "a": "Yes. WebP supports both lossy and lossless compression with full alpha channel transparency, just like PNG. This makes it an excellent replacement for PNG on the web." },
-        { "q": "Is WebP better than PNG for web?", "a": "In most cases, yes. WebP produces 25–35% smaller files than PNG at equivalent quality, and it supports transparency. The main consideration is browser support, but WebP is now supported by all major browsers." },
-        { "q": "What quality setting should I use for WebP?", "a": "For lossy WebP, 75–85% quality is typically optimal for web use, providing an excellent balance between file size and visual quality. At these settings, WebP often looks as good as PNG at significantly smaller file sizes." },
-        { "q": "Can I convert SVG to WebP for free?", "a": "Yes. This converter is completely free to use with no signup, no watermarks, and no limits on file size or number of conversions." },
-        { "q": "Is this SVG to WebP converter safe?", "a": "Absolutely. All processing is performed locally in your browser. Your SVG files are never uploaded to any server, ensuring complete data privacy." }
+        {
+          "q": "How do I convert SVG to WebP?",
+          "a": "Upload your SVG file, choose your desired output size, quality, and background, then click convert. Your WebP file will be ready for download instantly."
+        },
+        {
+          "q": "Does WebP support transparency?",
+          "a": "Yes. WebP supports both lossy and lossless compression with full alpha channel transparency, just like PNG. This makes it an excellent replacement for PNG on the web."
+        },
+        {
+          "q": "Is WebP better than PNG for web?",
+          "a": "In most cases, yes. WebP produces 25–35% smaller files than PNG at equivalent quality, and it supports transparency. The main consideration is browser support, but WebP is now supported by all major browsers."
+        },
+        {
+          "q": "What quality setting should I use for WebP?",
+          "a": "For lossy WebP, 75–85% quality is typically optimal for web use, providing an excellent balance between file size and visual quality. At these settings, WebP often looks as good as PNG at significantly smaller file sizes."
+        },
+        {
+          "q": "Can I convert SVG to WebP for free?",
+          "a": "Yes. This converter is completely free to use with no signup, no watermarks, and no limits on file size or number of conversions."
+        },
+        {
+          "q": "Is this SVG to WebP converter safe?",
+          "a": "Absolutely. All processing is performed locally in your browser. Your SVG files are never uploaded to any server, ensuring complete data privacy."
+        }
       ]
     },
     "pdf": {
@@ -295,19 +505,52 @@
       "seo1Content": "PDF (Portable Document Format) is the universal standard for sharing and printing documents. Converting SVG to PDF allows you to package your vector graphics into a format that preserves layout and appearance across all devices and operating systems. PDF files are ideal for sending artwork to clients, printing service providers, or anyone who needs a self-contained document. Unlike SVG, PDF is universally viewable without special software — every modern device can open PDF files natively.",
       "seo2Title": "When to Use PDF Format",
       "seo2Items": [
-        { "label": "Printing", "desc": "PDF is the preferred format for commercial and desktop printing workflows" },
-        { "label": "Client handoffs", "desc": "Share artwork with clients who may not have design software" },
-        { "label": "Presentations", "desc": "Embed SVG-based diagrams and illustrations into presentation decks" },
-        { "label": "Archiving", "desc": "PDF preserves your graphics in a stable, long-term format" },
-        { "label": "Legal and formal documents", "desc": "When graphics need to be part of official documentation" }
+        {
+          "label": "Printing",
+          "desc": "PDF is the preferred format for commercial and desktop printing workflows"
+        },
+        {
+          "label": "Client handoffs",
+          "desc": "Share artwork with clients who may not have design software"
+        },
+        {
+          "label": "Presentations",
+          "desc": "Embed SVG-based diagrams and illustrations into presentation decks"
+        },
+        {
+          "label": "Archiving",
+          "desc": "PDF preserves your graphics in a stable, long-term format"
+        },
+        {
+          "label": "Legal and formal documents",
+          "desc": "When graphics need to be part of official documentation"
+        }
       ],
       "faq": [
-        { "q": "How do I convert SVG to PDF?", "a": "Upload your SVG file, adjust the output dimensions if needed, then click convert. The SVG will be rasterized and embedded into a PDF document that you can download." },
-        { "q": "Is the SVG converted to vector or raster in the PDF?", "a": "The current implementation rasterizes the SVG and embeds it as a high-quality PNG image within the PDF. This ensures visual fidelity across all PDF viewers. The output dimensions are preserved based on your scale setting." },
-        { "q": "What scale should I use for SVG to PDF?", "a": "For screen viewing, 1x or 2x is sufficient. For printing at 300 DPI, use a higher scale (4x or more) depending on the original SVG dimensions. The PDF dimensions are displayed in millimeters for reference." },
-        { "q": "Can I convert multiple SVGs to PDF at once?", "a": "Currently, this tool converts one SVG at a time. You can repeat the process for multiple files quickly since conversion happens instantly in your browser." },
-        { "q": "Can I convert SVG to PDF for free?", "a": "Yes. This tool is completely free with no signup required and no watermarks added to your output." },
-        { "q": "Is this SVG to PDF converter safe?", "a": "Yes. All processing happens entirely in your browser using client-side JavaScript. Your SVG files are never uploaded to any server." }
+        {
+          "q": "How do I convert SVG to PDF?",
+          "a": "Upload your SVG file, adjust the output dimensions if needed, then click convert. The SVG will be rasterized and embedded into a PDF document that you can download."
+        },
+        {
+          "q": "Is the SVG converted to vector or raster in the PDF?",
+          "a": "The current implementation rasterizes the SVG and embeds it as a high-quality PNG image within the PDF. This ensures visual fidelity across all PDF viewers. The output dimensions are preserved based on your scale setting."
+        },
+        {
+          "q": "What scale should I use for SVG to PDF?",
+          "a": "For screen viewing, 1x or 2x is sufficient. For printing at 300 DPI, use a higher scale (4x or more) depending on the original SVG dimensions. The PDF dimensions are displayed in millimeters for reference."
+        },
+        {
+          "q": "Can I convert multiple SVGs to PDF at once?",
+          "a": "Currently, this tool converts one SVG at a time. You can repeat the process for multiple files quickly since conversion happens instantly in your browser."
+        },
+        {
+          "q": "Can I convert SVG to PDF for free?",
+          "a": "Yes. This tool is completely free with no signup required and no watermarks added to your output."
+        },
+        {
+          "q": "Is this SVG to PDF converter safe?",
+          "a": "Yes. All processing happens entirely in your browser using client-side JavaScript. Your SVG files are never uploaded to any server."
+        }
       ]
     },
     "ico": {
@@ -321,18 +564,48 @@
       "seo2Content": "An ICO (Icon) file is a container format that can hold one or more images at different sizes and color depths. Originally designed for Windows, ICO files are now the de facto standard for website favicons. A well-crafted ICO file includes multiple resolutions so the browser can choose the appropriate size for each context: 16×16 for browser tabs, 32×32 for Windows taskbar, 48×48 for Windows shortcuts, and 64×64 for high-DPI displays. This ensures your icon looks crisp everywhere without needing separate files.",
       "seo3Title": "Creating Favicons from SVG",
       "seo3Items": [
-        { "label": "Design your icon as SVG", "desc": "Start with a clean, simple SVG that works well at small sizes" },
-        { "label": "Convert to ICO", "desc": "Use this tool to generate a multi-size ICO file" },
-        { "label": "Add to your site", "desc": "Place favicon.ico in your root directory and add the link tag to your HTML" },
-        { "label": "Test across browsers", "desc": "Verify the favicon appears in Chrome, Firefox, Safari, and Edge" }
+        {
+          "label": "Design your icon as SVG",
+          "desc": "Start with a clean, simple SVG that works well at small sizes"
+        },
+        {
+          "label": "Convert to ICO",
+          "desc": "Use this tool to generate a multi-size ICO file"
+        },
+        {
+          "label": "Add to your site",
+          "desc": "Place favicon.ico in your root directory and add the link tag to your HTML"
+        },
+        {
+          "label": "Test across browsers",
+          "desc": "Verify the favicon appears in Chrome, Firefox, Safari, and Edge"
+        }
       ],
       "faq": [
-        { "q": "How do I convert SVG to ICO?", "a": "Upload your SVG file and click convert. The tool automatically generates an ICO file containing multiple icon sizes (16×16, 32×32, 48×48, and 64×64 pixels) for maximum compatibility." },
-        { "q": "What sizes are included in the ICO file?", "a": "The generated ICO file includes four sizes: 16×16, 32×32, 48×48, and 64×64 pixels. These cover all common use cases including browser tabs, Windows shortcuts, and taskbar icons." },
-        { "q": "How do I use the ICO as a favicon?", "a": "After downloading the ICO file, place it in your website's root directory as \"favicon.ico\" and add a link tag with rel=\"icon\" pointing to it in your HTML head. Most browsers will automatically detect it." },
-        { "q": "Does ICO support transparency?", "a": "The ICO format supports 32-bit alpha channel transparency. However, the conversion renders the SVG with a white background at each size. For fully transparent favicons, consider using PNG format instead." },
-        { "q": "Can I convert SVG to ICO for free?", "a": "Yes. This tool is completely free with no signup required. There are no watermarks or usage restrictions." },
-        { "q": "Is this SVG to ICO converter safe?", "a": "Yes. All conversion happens locally in your browser using JavaScript. Your SVG files are never uploaded to any external server." }
+        {
+          "q": "How do I convert SVG to ICO?",
+          "a": "Upload your SVG file and click convert. The tool automatically generates an ICO file containing multiple icon sizes (16×16, 32×32, 48×48, and 64×64 pixels) for maximum compatibility."
+        },
+        {
+          "q": "What sizes are included in the ICO file?",
+          "a": "The generated ICO file includes four sizes: 16×16, 32×32, 48×48, and 64×64 pixels. These cover all common use cases including browser tabs, Windows shortcuts, and taskbar icons."
+        },
+        {
+          "q": "How do I use the ICO as a favicon?",
+          "a": "After downloading the ICO file, place it in your website's root directory as \"favicon.ico\" and add a link tag with rel=\"icon\" pointing to it in your HTML head. Most browsers will automatically detect it."
+        },
+        {
+          "q": "Does ICO support transparency?",
+          "a": "The ICO format supports 32-bit alpha channel transparency. However, the conversion renders the SVG with a white background at each size. For fully transparent favicons, consider using PNG format instead."
+        },
+        {
+          "q": "Can I convert SVG to ICO for free?",
+          "a": "Yes. This tool is completely free with no signup required. There are no watermarks or usage restrictions."
+        },
+        {
+          "q": "Is this SVG to ICO converter safe?",
+          "a": "Yes. All conversion happens locally in your browser using JavaScript. Your SVG files are never uploaded to any external server."
+        }
       ]
     },
     "dxf": {
@@ -344,29 +617,80 @@
       "seo1Content": "DXF (Drawing Exchange Format) is the most widely supported interchange format for CAD (Computer-Aided Design) software. Converting SVG to DXF enables you to take web-based vector graphics and bring them into professional CAD environments like AutoCAD, LibreCAD, and FreeCAD. This is particularly useful for CNC machining, laser cutting, architectural drawings, and engineering workflows where precise dimensional data is required. The SVG-to-DXF bridge lets designers collaborate across the web and CAD worlds seamlessly.",
       "seo2Title": "SVG to DXF Use Cases",
       "seo2Items": [
-        { "label": "Laser cutting", "desc": "Convert SVG designs into DXF files ready for laser cutter software" },
-        { "label": "CNC routing", "desc": "Prepare vector paths for CNC machining operations" },
-        { "label": "Architectural drafting", "desc": "Bring web-sourced floor plans and diagrams into CAD tools" },
-        { "label": "Sign making", "desc": "Convert logos and text to DXF for vinyl cutting and sign production" },
-        { "label": "3D modeling reference", "desc": "Use SVG outlines as a starting point for 3D CAD models" }
+        {
+          "label": "Laser cutting",
+          "desc": "Convert SVG designs into DXF files ready for laser cutter software"
+        },
+        {
+          "label": "CNC routing",
+          "desc": "Prepare vector paths for CNC machining operations"
+        },
+        {
+          "label": "Architectural drafting",
+          "desc": "Bring web-sourced floor plans and diagrams into CAD tools"
+        },
+        {
+          "label": "Sign making",
+          "desc": "Convert logos and text to DXF for vinyl cutting and sign production"
+        },
+        {
+          "label": "3D modeling reference",
+          "desc": "Use SVG outlines as a starting point for 3D CAD models"
+        }
       ],
       "seo3Title": "What Gets Converted",
       "seo3Intro": "The converter extracts geometric elements from your SVG and maps them to DXF entities:",
       "seo3Items": [
-        { "label": "Lines", "desc": "→ DXF LINE entities" },
-        { "label": "Rectangles", "desc": "→ Four DXF LINE entities forming a closed rectangle" },
-        { "label": "Circles", "desc": "→ DXF CIRCLE entities" },
-        { "label": "Ellipses", "desc": "→ DXF LWPOLYLINE (approximated with 64 segments)" },
-        { "label": "Polygons & Polylines", "desc": "→ DXF LWPOLYLINE entities" },
-        { "label": "Paths (M, L, Z)", "desc": "→ DXF LWPOLYLINE entities" }
+        {
+          "label": "Lines",
+          "desc": "→ DXF LINE entities"
+        },
+        {
+          "label": "Rectangles",
+          "desc": "→ Four DXF LINE entities forming a closed rectangle"
+        },
+        {
+          "label": "Circles",
+          "desc": "→ DXF CIRCLE entities"
+        },
+        {
+          "label": "Ellipses",
+          "desc": "→ DXF LWPOLYLINE (approximated with 64 segments)"
+        },
+        {
+          "label": "Polygons & Polylines",
+          "desc": "→ DXF LWPOLYLINE entities"
+        },
+        {
+          "label": "Paths (M, L, Z)",
+          "desc": "→ DXF LWPOLYLINE entities"
+        }
       ],
       "faq": [
-        { "q": "How do I convert SVG to DXF?", "a": "Upload your SVG file and click convert. The tool parses SVG elements (lines, rectangles, circles, ellipses, polygons, polylines, and paths) and exports them as DXF entities." },
-        { "q": "Which SVG elements are converted to DXF?", "a": "Lines, rectangles, circles, ellipses, polygons, polylines, and basic path commands (M, L, Z) are converted. Complex SVG features like text, gradients, filters, clip-paths, and embedded images are not supported." },
-        { "q": "What software can open DXF files?", "a": "DXF files can be opened in AutoCAD, LibreCAD, FreeCAD, QCAD, DraftSight, Inkscape (import), and many other CAD and design applications." },
-        { "q": "Are curves in SVG paths preserved in DXF?", "a": "Curved path commands (C, S, Q, T, A) are not directly supported. Currently, only M (moveto), L (lineto), and Z (close) commands are extracted and converted to DXF POLYLINE entities." },
-        { "q": "Can I convert SVG to DXF for free?", "a": "Yes. This tool is completely free with no signup required and no limitations." },
-        { "q": "Is this SVG to DXF converter safe?", "a": "Yes. All conversion happens in your browser. Your SVG files are never uploaded to any server, keeping your design data completely private." }
+        {
+          "q": "How do I convert SVG to DXF?",
+          "a": "Upload your SVG file and click convert. The tool parses SVG elements (lines, rectangles, circles, ellipses, polygons, polylines, and paths) and exports them as DXF entities."
+        },
+        {
+          "q": "Which SVG elements are converted to DXF?",
+          "a": "Lines, rectangles, circles, ellipses, polygons, polylines, and basic path commands (M, L, Z) are converted. Complex SVG features like text, gradients, filters, clip-paths, and embedded images are not supported."
+        },
+        {
+          "q": "What software can open DXF files?",
+          "a": "DXF files can be opened in AutoCAD, LibreCAD, FreeCAD, QCAD, DraftSight, Inkscape (import), and many other CAD and design applications."
+        },
+        {
+          "q": "Are curves in SVG paths preserved in DXF?",
+          "a": "Curved path commands (C, S, Q, T, A) are not directly supported. Currently, only M (moveto), L (lineto), and Z (close) commands are extracted and converted to DXF POLYLINE entities."
+        },
+        {
+          "q": "Can I convert SVG to DXF for free?",
+          "a": "Yes. This tool is completely free with no signup required and no limitations."
+        },
+        {
+          "q": "Is this SVG to DXF converter safe?",
+          "a": "Yes. All conversion happens in your browser. Your SVG files are never uploaded to any server, keeping your design data completely private."
+        }
       ]
     }
   },
@@ -405,18 +729,48 @@
     "seo1Content": "Image to SVG conversion, also known as vectorization or image tracing, transforms raster images (made of pixels) into vector graphics (made of mathematical paths). This process is invaluable when you need to scale an image without losing quality, edit individual elements of a graphic, or reduce file size for simple illustrations. Unlike raster images that become pixelated when enlarged, vector SVGs maintain perfect clarity at any size.",
     "seo2Title": "Best Use Cases for Image Tracing",
     "seo2Items": [
-      { "label": "Logo vectorization", "desc": "Convert a bitmap logo to a scalable vector for print and web" },
-      { "label": "Icon conversion", "desc": "Turn raster icons into resolution-independent SVGs" },
-      { "label": "Line art and sketches", "desc": "Digitize hand-drawn artwork for editing in vector tools" },
-      { "label": "Signature digitization", "desc": "Convert a scanned signature to SVG for documents" }
+      {
+        "label": "Logo vectorization",
+        "desc": "Convert a bitmap logo to a scalable vector for print and web"
+      },
+      {
+        "label": "Icon conversion",
+        "desc": "Turn raster icons into resolution-independent SVGs"
+      },
+      {
+        "label": "Line art and sketches",
+        "desc": "Digitize hand-drawn artwork for editing in vector tools"
+      },
+      {
+        "label": "Signature digitization",
+        "desc": "Convert a scanned signature to SVG for documents"
+      }
     ],
     "faq": [
-      { "q": "How does image to SVG conversion work?", "a": "Image to SVG conversion (also called vectorization or tracing) analyzes the pixels in a raster image and recreates the shapes, lines, and colors as vector paths. This process detects edges, colors, and shapes to produce an SVG that approximates the original image." },
-      { "q": "What image formats can be converted to SVG?", "a": "This tool supports PNG, JPG/JPEG, GIF, ICO, and WebP formats. All common raster image formats are accepted." },
-      { "q": "Will the converted SVG look exactly like my original image?", "a": "It depends on the image. Simple graphics like logos, icons, and line art convert very well with near-perfect results. Photographs and complex images with many colors and gradients produce larger SVGs with less accuracy." },
-      { "q": "What types of images work best for SVG conversion?", "a": "Simple graphics work best: logos, icons, line art, clip art, signatures, and diagrams. Images with clear edges, solid colors, and limited color palettes produce the cleanest SVG output." },
-      { "q": "Is image to SVG conversion free?", "a": "Yes. This tool is completely free with no signup required." },
-      { "q": "Is my data safe during conversion?", "a": "Yes. All processing happens in your browser. Your images are never uploaded to any server." }
+      {
+        "q": "How does image to SVG conversion work?",
+        "a": "Image to SVG conversion (also called vectorization or tracing) analyzes the pixels in a raster image and recreates the shapes, lines, and colors as vector paths. This process detects edges, colors, and shapes to produce an SVG that approximates the original image."
+      },
+      {
+        "q": "What image formats can be converted to SVG?",
+        "a": "This tool supports PNG, JPG/JPEG, GIF, ICO, and WebP formats. All common raster image formats are accepted."
+      },
+      {
+        "q": "Will the converted SVG look exactly like my original image?",
+        "a": "It depends on the image. Simple graphics like logos, icons, and line art convert very well with near-perfect results. Photographs and complex images with many colors and gradients produce larger SVGs with less accuracy."
+      },
+      {
+        "q": "What types of images work best for SVG conversion?",
+        "a": "Simple graphics work best: logos, icons, line art, clip art, signatures, and diagrams. Images with clear edges, solid colors, and limited color palettes produce the cleanest SVG output."
+      },
+      {
+        "q": "Is image to SVG conversion free?",
+        "a": "Yes. This tool is completely free with no signup required."
+      },
+      {
+        "q": "Is my data safe during conversion?",
+        "a": "Yes. All processing happens in your browser. Your images are never uploaded to any server."
+      }
     ]
   },
   "dxfToSvg": {
@@ -444,18 +798,48 @@
     "seo1Content": "DXF (Drawing Exchange Format) is the standard file format for exchanging CAD drawings between different software applications. Converting DXF to SVG makes your CAD data accessible on the web — enabling you to embed technical drawings in documentation, share designs on websites, or import CAD data into web-based design tools. SVG's native support in browsers means the converted files can be viewed without any plugins or special software.",
     "seo2Title": "DXF to SVG Use Cases",
     "seo2Items": [
-      { "label": "Web documentation", "desc": "Display technical drawings and schematics in online manuals" },
-      { "label": "Design portfolios", "desc": "Showcase CAD work on personal or company websites" },
-      { "label": "Interactive applications", "desc": "Use SVG for interactive CAD viewers and annotation tools" },
-      { "label": "Cross-tool compatibility", "desc": "Import CAD data into Figma, Sketch, Illustrator, or Inkscape via SVG" }
+      {
+        "label": "Web documentation",
+        "desc": "Display technical drawings and schematics in online manuals"
+      },
+      {
+        "label": "Design portfolios",
+        "desc": "Showcase CAD work on personal or company websites"
+      },
+      {
+        "label": "Interactive applications",
+        "desc": "Use SVG for interactive CAD viewers and annotation tools"
+      },
+      {
+        "label": "Cross-tool compatibility",
+        "desc": "Import CAD data into Figma, Sketch, Illustrator, or Inkscape via SVG"
+      }
     ],
     "faq": [
-      { "q": "How do I convert DXF to SVG?", "a": "Upload your DXF file and click convert. The tool will parse the DXF entities and render them as SVG elements, producing a web-ready vector graphic." },
-      { "q": "What DXF entities are supported?", "a": "The converter supports common DXF entities including LINE, CIRCLE, ARC, POLYLINE, LWPOLYLINE, ELLIPSE, and POINT. Complex entities like dimensions, hatches, and 3D objects are not supported and will be skipped." },
-      { "q": "Can I convert DXF to SVG for web use?", "a": "Yes. SVG is an ideal format for displaying CAD drawings on websites. The converted SVG can be embedded directly in HTML, used in documentation, or displayed in interactive web applications." },
-      { "q": "Will my DXF dimensions be preserved?", "a": "The geometric shapes and their relative positions will be preserved. However, SVG uses pixel units while DXF uses real-world units (mm, inches), so you may need to scale the output to match your intended dimensions." },
-      { "q": "Can I convert DXF to SVG for free?", "a": "Yes. This tool is completely free with no signup required and no usage limits." },
-      { "q": "Is this DXF to SVG converter safe?", "a": "Yes. All processing happens in your browser. Your DXF files are never uploaded to any server, keeping your engineering data private." }
+      {
+        "q": "How do I convert DXF to SVG?",
+        "a": "Upload your DXF file and click convert. The tool will parse the DXF entities and render them as SVG elements, producing a web-ready vector graphic."
+      },
+      {
+        "q": "What DXF entities are supported?",
+        "a": "The converter supports common DXF entities including LINE, CIRCLE, ARC, POLYLINE, LWPOLYLINE, ELLIPSE, and POINT. Complex entities like dimensions, hatches, and 3D objects are not supported and will be skipped."
+      },
+      {
+        "q": "Can I convert DXF to SVG for web use?",
+        "a": "Yes. SVG is an ideal format for displaying CAD drawings on websites. The converted SVG can be embedded directly in HTML, used in documentation, or displayed in interactive web applications."
+      },
+      {
+        "q": "Will my DXF dimensions be preserved?",
+        "a": "The geometric shapes and their relative positions will be preserved. However, SVG uses pixel units while DXF uses real-world units (mm, inches), so you may need to scale the output to match your intended dimensions."
+      },
+      {
+        "q": "Can I convert DXF to SVG for free?",
+        "a": "Yes. This tool is completely free with no signup required and no usage limits."
+      },
+      {
+        "q": "Is this DXF to SVG converter safe?",
+        "a": "Yes. All processing happens in your browser. Your DXF files are never uploaded to any server, keeping your engineering data private."
+      }
     ]
   },
   "pages": {
@@ -673,10 +1057,6 @@
     "textPlaceholder": "e.g. A",
     "bgColorLabel": "Background Color & Opacity",
     "textColorLabel": "Text Color",
-    "textGradientLabel": "Text Gradient",
-    "gradientStart": "Start Color",
-    "gradientEnd": "End Color",
-    "gradientDirection": "Direction",
     "radiusLabel": "Corner Radius",
     "fontSizeLabel": "Font Size",
     "fontFamilyLabel": "Font Family",
@@ -688,18 +1068,76 @@
     "seo1Content": "This tool lets you create simple text-based SVG icons directly in your browser. Perfect for generating app icons, favicon placeholders, avatar initials, or letter-based logos. The generated SVG files are vector-based, meaning they scale to any size without losing quality. You can customize the background color and opacity, text color, font size, font family, and corner radius. All processing happens locally in your browser — your data never leaves your device.",
     "seo2Title": "Common Use Cases",
     "seo2Items": [
-      { "label": "App icons", "desc": "Generate quick placeholder icons with initials for mobile and web apps" },
-      { "label": "Avatar initials", "desc": "Create circular avatar icons with user initials for profile pictures" },
-      { "label": "Favicon creation", "desc": "Design simple letter-based favicons that work at small sizes" },
-      { "label": "Logo drafts", "desc": "Quickly prototype text-based logo concepts before final design" }
+      {
+        "label": "App icons",
+        "desc": "Generate quick placeholder icons with initials for mobile and web apps"
+      },
+      {
+        "label": "Avatar initials",
+        "desc": "Create circular avatar icons with user initials for profile pictures"
+      },
+      {
+        "label": "Favicon creation",
+        "desc": "Design simple letter-based favicons that work at small sizes"
+      },
+      {
+        "label": "Logo drafts",
+        "desc": "Quickly prototype text-based logo concepts before final design"
+      }
     ],
     "faq": [
-      { "q": "What is this icon generator?", "a": "This tool generates SVG icons from custom text. You can set background color, text color, font size, border radius, and opacity, then download the result as a scalable SVG file." },
-      { "q": "Can I use the generated icons commercially?", "a": "Yes. The icons are generated locally in your browser and you have full rights to use them for any purpose, including commercial projects." },
-      { "q": "What formats can I download?", "a": "The tool currently exports SVG format. You can then use the SVG to PNG or SVG to ICO converters on this site to convert to other formats." },
-      { "q": "How do I reposition the text?", "a": "Click and drag the text directly in the preview area. The position is saved in the downloaded SVG file." },
-      { "q": "Is this tool free?", "a": "Yes. This icon generator is completely free with no signup required, no watermarks, and no usage limits." },
-      { "q": "Can I make a transparent background?", "a": "Yes. Set the background opacity to 0% to create a fully transparent background, or use any value between 0% and 100% for semi-transparency." }
-    ]
+      {
+        "q": "What is this icon generator?",
+        "a": "This tool generates SVG icons from custom text. You can set background color, text color, font size, border radius, and opacity, then download the result as a scalable SVG file."
+      },
+      {
+        "q": "Can I use the generated icons commercially?",
+        "a": "Yes. The icons are generated locally in your browser and you have full rights to use them for any purpose, including commercial projects."
+      },
+      {
+        "q": "What formats can I download?",
+        "a": "The tool currently exports SVG format. You can then use the SVG to PNG or SVG to ICO converters on this site to convert to other formats."
+      },
+      {
+        "q": "How do I reposition the text?",
+        "a": "Click and drag the text directly in the preview area. The position is saved in the downloaded SVG file."
+      },
+      {
+        "q": "Is this tool free?",
+        "a": "Yes. This icon generator is completely free with no signup required, no watermarks, and no usage limits."
+      },
+      {
+        "q": "Can I make a transparent background?",
+        "a": "Yes. Set the background opacity to 0% to create a fully transparent background, or use any value between 0% and 100% for semi-transparency."
+      }
+    ],
+    "fgTypeLabel": "Foreground Type",
+    "fgTypeText": "Text",
+    "fgTypeIcon": "SVG Icon",
+    "importSvgLabel": "Import SVG File",
+    "importSvgHint": ".svg files supported",
+    "importTabFile": "File Import",
+    "importTabCode": "Code Input",
+    "importCodePlaceholder": "Paste SVG code here...",
+    "importCodeBtn": "Apply SVG Code",
+    "importSvgBtn": "Choose SVG File",
+    "importSvgSuccess": "Imported",
+    "importSvgError": "Could not parse the SVG file",
+    "iconSizeLabel": "Icon Size",
+    "iconOpacityLabel": "Icon Opacity",
+    "iconFillModeLabel": "Fill Mode",
+    "fillModeSolid": "Solid",
+    "fillModeGradient": "Gradient",
+    "iconColorLabel": "Icon Color",
+    "gradColorsLabel": "Gradient Colors",
+    "gradAngleLabel": "Gradient Angle",
+    "gradOpacityLabel": "Opacity Gradient",
+    "gradOpacity1Label": "Start Opacity",
+    "gradOpacity2Label": "End Opacity",
+    "iconScaleLabel": "Scale Transform",
+    "scaleHorizontal": "Horizontal Scale",
+    "scaleVertical": "Vertical Scale",
+    "scaleReset": "Reset Scale",
+    "removeIcon": "Remove Icon"
   }
 }
