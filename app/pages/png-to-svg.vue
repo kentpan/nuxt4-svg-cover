@@ -32,7 +32,7 @@ const {
 const inputRef = ref<HTMLInputElement | null>(null)
 const isDragActive = ref(false)
 
-const colorOptions = [16, 32, 64]
+
 
 const faqItems = computed(() => {
   const raw = tm('imageToSvg.faq')
@@ -289,24 +289,20 @@ function handleReset() {
                 </div>
               </div>
 
-              <!-- Number of Colors -->
-              <div>
+              <!-- Number of Colors (hidden in bw mode — always uses 2) -->
+              <div v-if="colorMode !== 'bw'">
                 <label class="text-xs font-medium text-muted-foreground block mb-1.5">
                   {{ t('imageToSvg.numberOfColors', { n: numberOfColors }) }}
                 </label>
-                <div class="flex gap-2">
-                  <button
-                    v-for="n in colorOptions"
-                    :key="n"
-                    class="flex-1 px-3 py-2 text-sm rounded-md border transition-colors"
-                    :class="numberOfColors === n
-                      ? 'bg-primary text-primary-foreground border-primary'
-                      : 'bg-muted text-foreground border-border hover:bg-accent'"
-                    @click="numberOfColors = n"
-                  >
-                    {{ n }}
-                  </button>
-                </div>
+                <input
+                  type="range"
+                  :min="2"
+                  max="64"
+                  step="1"
+                  :value="numberOfColors"
+                  class="w-full accent-primary"
+                  @input="numberOfColors = Number(($event.target as HTMLInputElement).value)"
+                />
                 <p class="text-xs text-muted-foreground mt-1.5">
                   {{ t('imageToSvg.colorsHint') }}
                 </p>

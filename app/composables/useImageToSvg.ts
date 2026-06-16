@@ -43,21 +43,20 @@ export function useImageToSvg() {
 
       // Draw image to canvas to get ImageData
       const canvas = document.createElement('canvas')
-      canvas.width = img.width
-      canvas.height = img.height
+      canvas.width = img.naturalWidth
+      canvas.height = img.naturalHeight
       const ctx = canvas.getContext('2d')!
       ctx.drawImage(img, 0, 0)
-      const imgData = ctx.getImageData(0, 0, img.width, img.height)
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height)
 
-      // Apply color mode preprocessing
-      applyColorMode(imgData, colorMode.value)
+      // Check if image has transparency
+      const hasTransparency = checkTransparency(imgData)
 
-      // Build imagetracerjs options based on user settings
-      const options = buildTracerOptions()
+      // Build imagetracerjs options
+      const options = buildTracerOptions(hasTransparency)
 
       // Dynamic import to keep bundle small
       const ImageTracerModule = await import('imagetracerjs')
-      // The library uses module.exports = new ImageTracer() in CJS
       const ImageTracer = (ImageTracerModule as any).default || ImageTracerModule
 
       if (!ImageTracer || typeof ImageTracer.imagedataToSVG !== 'function') {
@@ -67,8 +66,8 @@ export function useImageToSvg() {
       // Run tracing
       const svgStr = ImageTracer.imagedataToSVG(imgData, options)
 
-      // Post-process: ensure SVG has proper dimensions
-      const finalSvg = ensureSvgDimensions(svgStr, img.width, img.height)
+      // Ensure SVG has width/height for proper rendering
+      const finalSvg = ensureSvgDimensions(svgStr, canvas.width, canvas.height)
 
       svgOutput.value = finalSvg
       outputBlob.value = new Blob([finalSvg], { type: 'image/svg+xml' })
@@ -81,83 +80,84 @@ export function useImageToSvg() {
   }
 
   /**
-   * Apply color mode to ImageData in-place.
-   * - grayscale: convert to luminance using perceptual weights
-   * - bw: convert to pure black & white (threshold 128)
-   * - color: no change
+   * Check if ImageData has any semi-transparent pixels (alpha < 250).
    */
-  function applyColorMode(imgData: ImageData, mode: 'color' | 'grayscale' | 'bw') {
-    if (mode === 'color') return
-    const d = imgData.data
-    for (let i = 0; i < d.length; i += 4) {
-      const gray = Math.round(0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2])
-      if (mode === 'bw') {
-        const val = gray >= 128 ? 255 : 0
-        d[i] = val
-        d[i + 1] = val
-        d[i + 2] = val
-      } else {
-        d[i] = gray
-        d[i + 1] = gray
-        d[i + 2] = gray
-      }
+  function checkTransparency(imgData: ImageData): boolean {
+    for (let i = 3; i < imgData.data.length; i += 4) {
+      if (imgData.data[i] < 250) return true
     }
+    return false
   }
 
-  function buildTracerOptions(): Record<string, any> {
-    // Base options optimized for small file size
-    const base: Record<string, any> = {
-      // Color quantization
+  /**
+   * Build imagetracerjs options.
+   *
+   * Strategy:
+   * - Start from the library's own default preset (proven to work)
+   * - Only override the fields we need to change
+   * - For grayscale & B&W: use `pal` (fixed palette) from svgconv.com
+   * - For color: adjust colorsampling/colorquantcycles to eliminate stripes
+   */
+  function buildTracerOptions(hasTransparency: boolean): Record<string, any> {
+    // Detail level → pathomit mapping (from svgconv.com)
+    const detailIndex = detailLevel.value === 'high' ? 0 : detailLevel.value === 'medium' ? 1 : 2
+    const pathomit = [4, 8, 16][detailIndex]
+    const blurradius = detailIndex === 2 ? 2 : 0
+
+    // --- Black & white: fixed 2-color palette (from svgconv.com) ---
+    if (colorMode.value === 'bw') {
+      const pal = hasTransparency
+        ? [{ r: 0, g: 0, b: 0, a: 0 }, { r: 0, g: 0, b: 0, a: 255 }, { r: 255, g: 255, b: 255, a: 255 }]
+        : [{ r: 0, g: 0, b: 0, a: 255 }, { r: 255, g: 255, b: 255, a: 255 }]
+
+      return {
+        numberofcolors: 2,
+        colorsampling: 0,
+        colorquantcycles: 1,
+        pathomit,
+        blurradius,
+        strokewidth: 1,
+        scale: 1,
+        viewbox: false,
+        pal,
+      }
+    }
+
+    // --- Grayscale: fixed evenly-spaced gray palette (from svgconv.com) ---
+    if (colorMode.value === 'grayscale') {
+      const pal: Array<{ r: number; g: number; b: number; a: number }> = hasTransparency
+        ? [{ r: 0, g: 0, b: 0, a: 0 }]
+        : []
+
+      for (let i = 0; i < numberOfColors.value; i++) {
+        const v = Math.round((i / Math.max(1, numberOfColors.value - 1)) * 255)
+        pal.push({ r: v, g: v, b: v, a: 255 })
+      }
+
+      return {
+        numberofcolors: numberOfColors.value,
+        colorsampling: 0,
+        colorquantcycles: 1,
+        pathomit,
+        blurradius,
+        strokewidth: 1,
+        scale: 1,
+        viewbox: false,
+        pal,
+      }
+    }
+
+    // --- Color mode: default preset + stripe fix ---
+    return {
       numberofcolors: numberOfColors.value,
-      colorsampling: 2,
-      colorquantcycles: 3,
-      mincolorratio: 0,
-
-      // SVG rendering — minimal output
+      colorsampling: 0,     // sample every pixel (fixes stripe banding from default=2)
+      colorquantcycles: 3,  // default, keep as-is
+      pathomit,
+      blurradius,
+      strokewidth: 1,
       scale: 1,
-      roundcoords: 1,
-      desc: false,
       viewbox: false,
-      lcpr: 0,
-      qcpr: 0,
-
-      // Blur
-      blurradius: 0,
-      blurdelta: 20,
-
-      // Layering
-      layering: 0,
     }
-
-    // Detail level adjustments
-    switch (detailLevel.value) {
-      case 'high':
-        base.ltres = 0.5
-        base.qtres = 0.5
-        base.pathomit = 0
-        base.rightangleenhance = true
-        base.linefilter = true
-        base.strokewidth = 1
-        break
-      case 'medium':
-        base.ltres = 1
-        base.qtres = 1
-        base.pathomit = 8
-        base.rightangleenhance = true
-        base.linefilter = false
-        base.strokewidth = 1
-        break
-      case 'low':
-        base.ltres = 5
-        base.qtres = 5
-        base.pathomit = 16
-        base.rightangleenhance = true
-        base.linefilter = false
-        base.strokewidth = 1
-        break
-    }
-
-    return base
   }
 
   /**
@@ -165,11 +165,9 @@ export function useImageToSvg() {
    * imagetracerjs may omit them when viewbox=false and scale=1.
    */
   function ensureSvgDimensions(svgStr: string, w: number, h: number): string {
-    // If the SVG already has width/height, return as-is
     if (svgStr.includes('width=') && svgStr.includes('height=')) {
       return svgStr
     }
-    // Inject width and height into the opening <svg> tag
     return svgStr.replace(
       /<svg(\s)/,
       `<svg width="${w}" height="${h}"$1`,
