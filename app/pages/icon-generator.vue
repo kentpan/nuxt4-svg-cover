@@ -624,7 +624,7 @@ function scrollToGenerator() {
                 </div>
                 <div class="flex items-center gap-2 px-3 py-2 bg-muted/50 rounded-lg border border-border">
                   <span class="w-5 h-5 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" class="w-5 h-5" v-html="embeddedSvgInner ? (embeddedSvgInner as any).content : ''" :fill="iconColor" />
+                    <svg viewBox="0 0 24 24" class="w-5 h-5" v-html="embeddedSvgInner ? (embeddedSvgInner as any).content : ''" :fill="iconColor" ></svg>
                   </span>
                   <span class="text-sm text-foreground truncate flex-1">{{ importedSvgFileName }}</span>
                   <span class="text-xs text-green-600 font-medium">{{ t('iconGen.importSvgSuccess') }}</span>

@@ -87,6 +87,7 @@ export default defineNuxtConfig({
         },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary' },
+        { name: 'impact-site-verification', content: 'd318805f-f8de-4cf0-a906-4c62a8e29503' },
       ],
       link: [{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
       htmlAttrs: {
